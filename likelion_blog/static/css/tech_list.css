@@ -106,3 +106,122 @@
     font-weight: 400;
     line-height: 100%; /* 11px */
 }
+
+.category-filter{
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
+
+.chip1{
+    display: flex;
+    padding: 4px 10px;
+    align-items: flex-start;
+    gap: 4px;
+    border-radius: 999px;
+    background: var(--beige-accent-soft, #F8DCCA);
+}
+
+.chip-label1{
+    color: var(--beige-accent-ink, #8C3A19);
+
+/* Label/Chip */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 12px */
+    letter-spacing: 0.24px;
+}
+
+.chip{
+    display: flex;
+    padding: 4px 10px;
+    align-items: flex-start;
+    gap: 4px;
+    border-radius: 999px;
+    border: 1px solid var(--beige-line-strong, #B59C82);
+}
+
+.chip-label{
+    color: var(--beige-ink-2, #5B3A28);
+
+/* Label/Chip */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 12px */
+    letter-spacing: 0.24px;
+}
+
+.post-list{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.post-row{
+    display: flex;
+    padding: 24px 0;
+    align-items: flex-start;
+    gap: 32px;
+    align-self: stretch;
+    border-top: 1px solid var(--beige-line-default, #D9C7A8);
+}
+
+.post-date{
+    width: 120px;
+    color: var(--beige-ink-3, #8A6A55);
+
+/* Mono/Meta */
+    font-family: "JetBrains Mono";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 12px */
+}
+
+.content-col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex: 1 0 0;
+}
+
+.post-title{
+    color: var(--beige-ink-1, #3A2419);
+
+/* Heading/H4 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 28px */
+}
+
+.post-description{
+    width: 247px;
+    color: var(--beige-ink-3, #8A6A55);
+
+/* Body/Small */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; /* 22.4px */
+}
+
+.tag-row{
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    gap: 8px;
+    align-self: stretch;
+    flex-wrap: wrap;
+}
