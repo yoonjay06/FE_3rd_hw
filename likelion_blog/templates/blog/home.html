@@ -1,30 +1,34 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}{{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W1 — 아기 사자 작성 영역 #}
 
+<a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}"> </a>
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+
 <section class = "hero">
     <div class = "hero-inner">
-        <div class = "EyebrowRow">
-            <span>welcome · 환영합니다</span>
-            <span>— 2026, week 18</span>
+        <div class = "eyebrowrow">
+            <span class = "welcome">welcome · 환영합니다</span>
+            <span class = "week">— 2026, week 18</span>
         </div>
 
-        <h1>
+        <h1 class = "record">
             기록하는 일이<br>
-            성장이 되는 곳<span>.</span>
+            성장이 되는 곳
+            <span class = "dot">.</span>
         </h1>
 
-        <p>
+        <p class="blnote">
             아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>
             기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.
         </p>
 
         <div class = "spacer"></div>
 
-        <div class = "CTAs">
+        <div class = "ctas">
             <a href = "#" class = "btn-primary">최신 글 읽기 →</a>
             <a href = "#" class = "btn-ghost">about</a>
             <a href = "#" class = "btn-ghost">RSS</a>
@@ -32,17 +36,17 @@
 
         <div class = "spacer"></div>
 
-        <div class = "MetaStrip">
-            <div class = "NowWriting">
-                <span class = "Ellipse"></span>
-                <span>now writing</span>
-                <span>디자인 토큰 시리즈 6편</span>
+        <div class = "metastrip">
+            <div class = "nowwriting">
+                <span class = "ellipse"></span>
+                <span class = "nowwritings">now writing</span>
+                <span class = "dtoken">디자인 토큰 시리즈 6편</span>
             </div>
         </div>
     </div>
 </section>
 
-<section class = "오늘의-노트">
+<section class = "todaynote">
     <div class = "todaynote-inner">
         <div class = "todaynote-header">
             <div class = "todaynote-Frame">
@@ -54,25 +58,25 @@
         </div>
 
         <div class = "todaynote-grid">
-            <div class = "FeaturedPost">
-                <div class = "PlaceholderImg">
+            <div class = "featuredpost">
+                <div class = "placeholderimg">
                     <span class = "cover-image">손에 익는 디자인 시스템 · cover</span>                
                 </div>
 
-                <div class = "Content">
-                    <div class = "Frame">
+                <div class = "content">
+                    <div class = "frame">
                         <div class = "chip1">
-                            <span class = "Label">Frontend</span>
+                            <span class = "label-fe">Frontend</span>
                         </div>
                         <div class = "chip2">
-                            <span class = "Label">series · 5/8</span>
+                            <span class = "label-se">series · 5/8</span>
                         </div>
-                        <span>2026.04.28 · 8 min</span>
+                        <span class = "whmin">2026.04.28 · 8 min</span>
                     </div>
 
-                    <h2 class = "FeaturedPostTitle">손에 익는 디자인 시스템 만들기</h2>
+                    <h2 class = "featuredposttitle">손에 익는 디자인 시스템 만들기</h2>
 
-                    <p class = "FeaturedPostsmall">
+                    <p class = "featuredpostsmall">
                         토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.
                     </p>
 
@@ -80,56 +84,56 @@
                 </div>
             </div>
 
-            <aside class = "LatestList">
-                <span>LATEST · 최근 5편</span>
+            <aside class = "latestList">
+                <span class = "latest5">LATEST · 최근 5편</span>
                 <div class = "spacer"></div>
 
-                <div class = "LatestPostList">
-                    <div class = "PostMini">
+                <div class = "latestpostlist">
+                    <div class = "postmini">
 
-                        <div class = "PostMiniFrame">
+                        <div class = "postminiframe">
                             <span class = "chip">TypeScript</span>
-                            <span class = "PostDate">04.21</span>
+                            <span class = "postdate">04.21</span>
                         </div>
 
                         <span class = "comment">tRPC와 함께한 1년: 좋았던 것, 불편했던 것</span>
                     </div>
 
-                    <div class = "PostMini">
+                    <div class = "postmini">
 
-                        <div class = "PostMiniFrame">
+                        <div class = "postminiframe">
                             <span class = "chip">Frontend</span>
-                            <span class = "PostDate">04.14</span>
+                            <span class = "postdate">04.14</span>
                         </div>
 
                         <span class = "comment">CSS Container Queries, 결국 쓰게 되더라</span>
                     </div>
 
-                    <div class = "PostMini">
+                    <div class = "postmini">
 
-                        <div class = "PostMiniFrame">
+                        <div class = "postminiframe">
                             <span class = "chip">AI</span>
-                            <span class = "PostDate">04.07</span>
+                            <span class = "postdate">04.07</span>
                         </div>
 
                         <span class = "comment">Vibe coding 다음 단계 — 워크플로우 만들기</span>
                     </div>
 
-                    <div class = "PostMini">
+                    <div class = "postmini">
 
-                        <div class = "PostMiniFrame">
+                        <div class = "postminiframe">
                             <span class = "chip">Performance</span>
-                            <span class = "PostDate">03.30</span>
+                            <span class = "postdate">03.30</span>
                         </div>
 
                         <span class = "comment">React 19 컴파일러로 useMemo를 지웠다</span>
                     </div>
 
-                    <div class = "PostMini">
+                    <div class = "postmini">
 
-                        <div class = "PostMiniFrame">
+                        <div class = "postminiframe">
                             <span class = "chip">Series · DS</span>
-                            <span class = "PostDate">03.22</span>
+                            <span class = "postdate">03.22</span>
                         </div>
 
                         <span class = "comment">디자인 토큰을 코드로 옮기는 5가지 방법</span>
