@@ -1,9 +1,13 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}{{ post.title }} · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W1 — 본문/TOC/Meta. W2 — 댓글 섹션. #}
+
+<link rel="stylesheet" href="{% static 'css/tech_detail.css' %}">
+
 
 <main class = "post-reading-view">
     <div class = "post-main">

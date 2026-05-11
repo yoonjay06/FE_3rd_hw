@@ -4,8 +4,6 @@
     align-items: center;
     width: 1280px;
     padding: 88px 56px 56px 56px;
-    flex-direction: column;
-    align-items: center;
 }
 
 .hero-inner{
@@ -216,6 +214,7 @@
 }
 
 .record{
+    width: 880px;
     color: var(--beige-ink-1, #3A2419);
 
 /* Heading/Display */

@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}Tech · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W1 — 아기 사자 작성 영역 #}
+
+<link rel="stylesheet" href="{% static 'css/tech_list.css' %}">
+
+
 <main class = "tech-list-page">
     <div class = "tech-list-inner">
 
