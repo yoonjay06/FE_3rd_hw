@@ -4,4 +4,185 @@
 
 {% block content %}
 {# TODO: W1 — 본문/TOC/Meta. W2 — 댓글 섹션. #}
+
+<main class = "post-reading-view">
+    <div class = "post-main">
+        <aside class = "toc-list">
+            <span class = "toc-title">ON THIS PAGE</span>
+
+            <div class = "toc-items">
+                <div class = "toc-item">
+                    <span>1. 토큰이란</span>
+                </div>
+
+                <div class = "toc-item">
+                    <span>2. 단위 결정</span>
+                </div>
+
+                <div class = "toc-item">
+                    <span>3. 빌드 파이프라인</span>
+                </div>
+
+                <div class = "toc-item">
+                    <span>4. 마무리</span>
+                </div>
+            </div>
+        </aside>
+
+        <article class = "post-article">
+            <div class = "meta-top">
+                <div class = "chip">
+                    <span class = "chip-label">Frontend</span>
+                </div>
+
+                <span class = "post-meta-text">
+                    2026.04.28 · 8 min · series · 5/8
+                </span>
+            </div>
+
+            <h1 class = "post-title">
+                손에 익는 디자인 시스템 만들기
+            </h1>
+
+            <p class = "post-subtitle">
+                Designing a system that fits the hand — tokens, units, and the boring middle.
+            </p>
+
+            <div class = "note-divider">
+                <div class = "line"></div>
+            </div>
+
+            <p class = "post-paragraph">
+                디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알았죠. 토큰이 없는 컴포넌트는 짐이라는 걸요.
+            </p>
+
+            <h2 class = "article-heading">
+                1. 토큰이란
+            </h2>
+
+            <p class = "post-paragraph">
+                토큰은 디자인 결정에 이름을 붙이는 일이에요. --accent는 "주황색"이 아니라 "강조되는 무엇"을 의미하죠.
+            </p>
+
+            <pre class = "code-block"><code>:root {
+                  --accent: #E8794A;       /* terracotta · primary */
+                  --accent-hover: #C95A2C; /* deeper rust */
+                  --bg-page: #F5EDE0;      /* page · soft beige */
+            }</code></pre>
+
+            <p class = "post-paragraph">
+                이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.
+            </p>
+
+            <div class = "note-divider">
+                <div class = "line"></div>
+            </div>
+            <section class = "comment-section">
+
+                <h3 class = "comments-title">
+                comments · 4
+                </h3>
+
+                <div class = "comment-editor">
+                    <div class = "avatar">
+                        <span>BL</span>
+                    </div>
+
+                    <div class = "comment-editor-text">
+                        <span class = "comment-author">아기사자</span>
+                        <span class = "comment-placeholder">댓글을 남겨주세요...</span>
+                    </div>
+
+                    <button class = "comment-button">
+                        post →
+                    </button>
+                </div>
+
+                <div class = "comment-item">
+                    <div class = "avatar">
+                        <span>JM</span>
+                    </div>
+
+                    <div class = "comment-body">
+                        <div class = "comment-header">
+                            <span class = "comment-name">jaemin</span>
+                            <span class = "comment-date">2026.04.28</span>
+                        </div>
+
+                        <p class = "comment-text">
+                            토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.
+                        </p>
+                    </div>
+                </div>
+            
+                <div class = "note-divider-between-comments">
+                    <div class = "line"></div>
+                </div>
+
+                <div class = "comment-item">
+                    <div class = "avatar">
+                        <span>SY</span>
+                    </div>
+
+                    <div class = "comment-body">
+                        <div class = "comment-header">
+                            <span class = "comment-name">soyun</span>
+                            <span class = "comment-date">2026.04.29</span>
+                        </div>
+
+                        <p class = "comment-text">
+                            다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </article>
+
+        <aside class = "meta-sidebar">
+            <span class = "meta-sidebar-title">META</span>
+
+            <div class = "meta-list">
+                <div class = "meta-row">
+                    <span class = "meta-key">author</span>
+                    <span class = "meta-value">아기사자</span>
+                </div>
+
+                <div class = "meta-row">
+                    <span class = "meta-key">edited</span>
+                    <span class = "meta-value">2026.04.28</span>
+                </div>
+
+                <div class = "meta-row">
+                    <span class = "meta-key">views</span>
+                    <span class = "meta-value">1,284</span>
+                </div>
+
+                <div class = "meta-row">
+                    <span class = "meta-key">license</span>
+                    <span class = "meta-value">CC BY 4.0</span>
+                </div>  
+            </div>
+
+            <div class = "note-divider">
+                <div class = "line"></div>
+            </div>
+
+            <span class = "share-title">SHARE</span>
+
+            <div class = "share-group">
+                <button class = "chip-share">
+                    <span class = "chip-label">copy ⎘</span>
+                </button>
+
+                <button class = "chip-share">
+                    <span class = "chip-label">x</span>
+                </button>
+
+                <button class = "chip-share">
+                    <span class = "chip-label">rss</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+</main>
 {% endblock %}
