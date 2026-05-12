@@ -480,7 +480,7 @@ a {
     transform: scale(0.98);
 }
 
-.comment:hover{
+.postmini:hover .comment{
     align-self: stretch;
     color: var(--beige-accent-ink, #8C3A19);
 
