@@ -225,3 +225,27 @@
     align-self: stretch;
     flex-wrap: wrap;
 }
+
+
+.chip:hover .chip-label{
+    color: var(--beige-ink-2, #5B3A28);
+
+/* Label/Chip */    
+    font-family: Inter;
+    font-size: 12px;    
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%; /* 12px */
+    letter-spacing: 0.24px;
+}
+
+.post-row:hover .post-title{
+    color: var(--beige-accent-hover, #C95A2C);
+
+/* Heading/H4 */
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 28px */
+}

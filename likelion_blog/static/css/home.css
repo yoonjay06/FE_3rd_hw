@@ -466,3 +466,28 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.btn-primary:click{
+    transform: scale(0.98);
+}
+
+.featuredpost-link:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px #3A24190F, 0 8px 20px #3A241912;
+}
+
+.btn-ghost:click{
+    transform: scale(0.98);
+}
+
+.comment:hover{
+    align-self: stretch;
+    color: var(--beige-accent-ink, #8C3A19);
+
+/* Body/Small Bold */
+    font-family: Inter;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 160%; /* 22.4px */
+}
