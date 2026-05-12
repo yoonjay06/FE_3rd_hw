@@ -560,6 +560,8 @@
 
 .comment-section{
     gap:12px;
+    display: flex;
+    flex-direction: column;
 }
 
 .comment-item{
@@ -567,5 +569,9 @@
 }
 
 .post-article{
-    gap: 12px;  
+    gap:20px;
+}
+
+.comments-title{
+    margin: 0;
 }
