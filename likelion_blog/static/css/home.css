@@ -131,9 +131,11 @@
 .featuredpost{
     display: flex;
     width: 660px;
+
     flex-direction: column;
     align-items: flex-start;
     flex-shrink: 0;
+
     border-radius: var(--radius-lg, 12px);
     border: 1px solid var(--beige-line-default, #D9C7A8);
     background: var(--beige-bg-paper, #FBF6EC);
@@ -149,8 +151,8 @@
     align-items: center;
 
     border-radius: 8px;
-
-    border: 1px dashed #B59C82;
+    
+    border-bottom: 1px dashed #B59C82;
 
     background: #EFE4D2;
 
@@ -164,6 +166,7 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 12px;
+
 }
 
 .frame{
