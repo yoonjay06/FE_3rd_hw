@@ -83,9 +83,12 @@
 }
 
 .ellipse{
+    display: block;
     width: 8px;
     height: 8px;
-    fill: var(--beige-accent-default, #E8794A);
+
+    border-radius: 50%;
+    background-color: #E8794A;
 }
 
 .todaynote{
@@ -126,7 +129,7 @@
 }
 
 .featuredpost{
-    display: flex;  
+    display: flex;
     width: 660px;
     flex-direction: column;
     align-items: flex-start;
@@ -138,13 +141,20 @@
 
 .placeholderimg{
     display: flex;
+
     width: 660px;
     height: 240px;
+
     justify-content: center;
     align-items: center;
+
     border-radius: 8px;
-    border: 1px dashed var(--beige-line-strong, #B59C82);
-    background: var(--beige-bg-sunken, #EFE4D2);
+
+    border: 1px dashed #B59C82;
+
+    background: #EFE4D2;
+
+    box-sizing: border-box;
 }
 
 .content{
@@ -490,4 +500,8 @@ a {
     font-style: normal;
     font-weight: 600;
     line-height: 160%; /* 22.4px */
+}
+
+.postmini:last-child {
+    border-bottom: none;
 }
