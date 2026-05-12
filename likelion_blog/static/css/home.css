@@ -457,3 +457,12 @@
     font-weight: 600;
     line-height: 160%; /* 22.4px */
 }
+
+a {
+    text-decoration-line: none;
+}
+
+.featuredpost-link {
+    text-decoration: none;
+    color: inherit;
+}

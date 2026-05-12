@@ -57,35 +57,38 @@
                 see all →
             </a>
         </div>
-
+        
         <div class = "todaynote-grid">
-            <div class = "featuredpost">
-                <div class = "placeholderimg">
-                    <span class = "cover-image">손에 익는 디자인 시스템 · cover</span>                
-                </div>
-
-                <div class = "content">
-                    <div class = "frame">
-                        <div class = "chip1">
-                            <span class = "label-fe">Frontend</span>
-                        </div>
-                        <div class = "chip2">
-                            <span class = "label-se">series · 5/8</span>
-                        </div>
-                        <span class = "whmin">2026.04.28 · 8 min</span>
+            <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="featuredpost-link">
+                <div class = "featuredpost">
+                    <div class = "placeholderimg">
+                        <span class = "cover-image">손에 익는 디자인 시스템 · cover</span>                
                     </div>
 
-                    <h2 class = "featuredposttitle">손에 익는 디자인 시스템 만들기</h2>
+                    <div class = "content">
+                        <div class = "frame">
+                            <div class = "chip1">
+                                <span class = "label-fe">Frontend</span>
+                            </div>
+                            <div class = "chip2">
+                                <span class = "label-se">series · 5/8</span>
+                            </div>
+                            <span class = "whmin">2026.04.28 · 8 min</span>
+                        </div>
+                    
 
-                    <p class = "featuredpostsmall">
-                        토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.
-                    </p>
+                        <h2 class = "featuredposttitle">손에 익는 디자인 시스템 만들기</h2>
 
-                    <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="continue">
-                        이어 읽기 →
-                    </a>
+                        <p class = "featuredpostsmall">
+                            토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.
+                        </p>
+
+                        <div class = "continue">
+                            이어 읽기 →
+                        </div>
+                    </div>
                 </div>
-            </div>
+            </a>
 
             <aside class = "latestList">
                 <span class = "latest5">LATEST · 최근 5편</span>
