@@ -249,3 +249,30 @@
     font-weight: 600;
     line-height: 140%; /* 28px */
 }
+
+.post-title{
+    margin: 0;
+}
+
+.h2{
+    margin: 0;
+}
+
+.read-time{
+    color: var(--beige-ink-3, #8A6A55);
+
+/* Mono/Meta */
+    font-family: "JetBrains Mono";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 100%; /* 12px */
+}
+
+.h1{
+    margin: 0;
+}
+
+.page-title{
+    margin: 0;
+}

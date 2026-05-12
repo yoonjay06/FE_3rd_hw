@@ -537,3 +537,11 @@
     line-height: 100%; /* 12px */
     letter-spacing: 0.24px;
 }
+
+.post-title{
+    margin: 0;
+}
+
+.post-subtitle{
+    margin: 0;
+}

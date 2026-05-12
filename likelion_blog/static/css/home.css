@@ -105,6 +105,7 @@
     padding: 32px 56px;
     flex-direction: column;
     align-items: center;
+    gap: 12px;
 }
 
 .todaynote-header{
@@ -113,6 +114,7 @@
     height: 30px;
     justify-content: space-between;
     align-items: center;
+    gap: 12px;
 }
 
 .todaynote-Frame{
@@ -507,4 +509,24 @@ a {
 
 .postmini:last-child {
     border-bottom: none;
+}
+
+.post-title{
+    margin: 0;
+}
+
+.record{
+    margin: 0;
+}
+
+.blnote{
+    margin: 0;
+}
+
+.h3{
+    margin:0 ;
+}
+
+.todaynote-title{
+    margin: 0;
 }
