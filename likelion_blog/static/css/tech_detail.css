@@ -545,3 +545,27 @@
 .post-subtitle{
     margin: 0;
 }
+
+.h1{
+    margin: 0;
+}
+
+.p{
+    margin: 0;
+}
+
+.comment-text{
+    margin: 0;
+}
+
+.comment-section{
+    gap:12px;
+}
+
+.comment-item{
+    gap: 12px;
+}
+
+.post-article{
+    gap: 12px;  
+}
