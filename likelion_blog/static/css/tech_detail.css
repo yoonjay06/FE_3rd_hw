@@ -398,7 +398,7 @@
 .line-comment{
     width: 688px;
     height: 1px;
-    background: var(--beige-line-strong, #B59C82);
+    border: 1px dashed var(--beige-line-strong, #B59C82);
 }
 
 .comment-editor{
@@ -492,8 +492,8 @@
 
 .line{
     width: 680px;
-    height: 1px;
-    background: var(--beige-line-strong, #B59C82);
+    height: 1px ;
+    border: 1px dashed var(--beige-line-strong, #B59C82);
 }
 
 .share-title{
