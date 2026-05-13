@@ -587,3 +587,14 @@
 .p{
     margin: 0;
 }
+
+.hidden{
+    color: var(--beige-accent-ink, #8C3A19);
+
+/* Body/Large */
+    font-family: Inter;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 185%;
+}
