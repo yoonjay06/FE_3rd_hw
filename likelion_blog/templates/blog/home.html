@@ -10,19 +10,23 @@
 <section class = "hero">
     <div class = "hero-inner">
         <div class = "eyebrowrow">
-            <span class = "welcome">welcome · 환영합니다</span>
-            <span class = "week">— 2026, week 18</span>
+            <span class = "welcome">
+                {{ hero.eyebrow_left }}
+            </span>
+            <span class = "week">
+                {{ hero.eyebrow_right }}
+            </span>
         </div>
 
         <h1 class = "record">
-            기록하는 일이<br>
-            성장이 되는 곳
+            {{ hero.h1_line1 }}<br>
+            {{ hero.h1_line2 }}
             <span class = "dot">.</span>
         </h1>
 
         <p class="blnote">
-            아기사자(BL)가 매일 조금씩 적어가는 노트입니다.<br>
-            기술, 프로젝트, 그리고 평범한 하루의 단상까지 — 천천히 쌓아 둡니다.
+            {{ hero.bio_line1 }}<br>
+            {{ hero.bio_line2 }}
         </p>
 
         <div class = "spacer"></div>
@@ -39,7 +43,7 @@
             <div class = "nowwriting">
                 <span class = "ellipse"></span>
                 <span class = "nowwritings">now writing</span>
-                <span class = "dtoken">디자인 토큰 시리즈 6편</span>
+                <span class = "dtoken">{{ hero.now_writing }}</span>
             </div>
         </div>
     </div>
@@ -49,7 +53,7 @@
     <div class = "todaynote-inner">
         <div class = "todaynote-header">
             <div class = "todaynote-Frame">
-                <span class = "section-number">01</span>
+                <span class = "section-number">{{areas.order}}</span>
                 <h3 class = "todaynote-title">오늘의 노트</h3>
             </div>
 
@@ -62,25 +66,32 @@
             <a href="{% url 'tech_detail' 'design-system-that-fits-the-hand' %}" class="featuredpost-link">
                 <div class = "featuredpost">
                     <div class = "placeholderimg">
-                        <span class = "cover-image">손에 익는 디자인 시스템 · cover</span>                
+                        <span class = "cover-image">
+                            손에 익는 디자인 시스템 · cover
+                        </span>                
                     </div>
 
                     <div class = "content">
                         <div class = "frame">
                             <div class = "chip1">
-                                <span class = "label-fe">Frontend</span>
+                                <span class = "label-fe">
+                                    Frontend
+                                </span>
                             </div>
                             <div class = "chip2">
-                                <span class = "label-se">series · 5/8</span>
+                                <span class = "label-se">{{ featured.series_label}}</span>
                             </div>
-                            <span class = "whmin">2026.04.28 · 8 min</span>
+                            <span class = "whmin">
+                                {{ featured.published_at }} · {{ featured.read_minutes }} min</span>
                         </div>
                     
 
-                        <h2 class = "featuredposttitle">손에 익는 디자인 시스템 만들기</h2>
+                        <h2 class = "featuredposttitle">
+                            {{ featured.title }}
+                        </h2>
 
                         <p class = "featuredpostsmall">
-                            토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.
+                            {{ featured.subtitle }}
                         </p>
 
                         <div class = "continue">
