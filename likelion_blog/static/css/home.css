@@ -493,9 +493,7 @@ a {
     line-height: 160%; /* 22.4px */
 }
 
-.postmini:last-child {
-    border-bottom: none;
-}
+
 
 .post-title{
     margin: 0;
@@ -569,4 +567,15 @@ a {
 
 .btn-primary:hover {
     background: #C95A2C;
+}
+
+.postmini-link{
+    display: block;
+    width: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+.latestpostlist > .postmini-link:last-child .postmini { 
+    border-bottom: none;
 }

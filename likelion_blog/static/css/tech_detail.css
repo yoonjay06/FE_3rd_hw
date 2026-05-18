@@ -569,7 +569,7 @@
 }
 
 .post-article{
-    gap:20px;
+    gap: 20px;
 }
 
 .comments-title{
@@ -597,4 +597,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: 185%;
+}
+
+.post-article p,
+.post-article pre,
+.post-article h2{
+    margin: 0;
+}
+
+.code-block{
+    margin: 0;
 }
