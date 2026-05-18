@@ -36,47 +36,51 @@
         <article class = "post-article">
             <div class = "meta-top">
                 <div class = "chip1">
-                    <span class = "chip-label1">Frontend</span>
+                    <span class = "chip-label1">
+                        {{post.category.label}}
+                    </span>
                 </div>
 
                 <span class = "post-meta-text">
-                    2026.04.28 · 8 min · series · 5/8
+                    {{post.published_at}} · {{post.read_minutes}} min · {{post.series_label}}
                 </span>
             </div>
 
             <h1 class = "post-title">
-                손에 익는 디자인 시스템 만들기
+                {{ post.title }}
             </h1>
 
             <p class = "post-subtitle">
-                Designing a system that fits the hand — tokens, units, and the boring middle.
+                {{post.subtitle}} — tokens, units, and the boring middle.
             </p>
 
             <div class = "note-divider">
                 <div class = "line"></div>
             </div>
 
-            <p class = "post-paragraph">
-                디자인 시스템을 처음 만들 때, 저는 컴포넌트부터 시작했어요. 버튼, 카드, 입력 필드. 그러다 알았죠. <span class = "hidden">토큰이 없는 컴포넌트는 짐</span>이라는 걸요.
-            </p>
+                <p class = "post-paragraph">
+                    {% for section in sections %}
+                        {% if forloop.counter <= 5 %}
 
-            <h2 class = "article-heading">
-                1. 토큰이란
-            </h2>
+                            {% if section.kind == 'h2' %}
+                                <h2 id = "{{ section.anchor }}" class = "article-heading">
+                                    1. {{ section.text }}
+                                </h2>
+                        
+                            {% elif section.kind == 'p' %}
+                                <p class = "post-paragraph">
+                                    {{ section.text }}
+                                </p>
 
-            <p class = "post-paragraph1">
-                토큰은 디자인 결정에 이름을 붙이는 일이에요. <span class ="english">--accent</span>는 "주황색"이 아니라 "강조되는 무엇"을 의미하죠.
-            </p>
+                            {% elif section.kind == 'code' %}
+                                <pre class = "code-block"><code class = "code-blockkk">{{ section.text }}</code></pre>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+                    
+                </p>
 
-            <pre class = "code-block"><code class = "code-blockkk">:root {
-                  --accent: #E8794A;       /* terracotta · primary */
-                  --accent-hover: #C95A2C; /* deeper rust */
-                  --bg-page: #F5EDE0;      /* page · soft beige */
-            }</code></pre>
-
-            <p class = "post-paragraph2">
-                이름을 잘 붙이면, 색을 바꾸는 일이 의미를 바꾸는 일이 됩니다. 그게 시스템이에요.
-            </p>
+            
 
             <div class = "note-divider">
                 <div class = "line"></div>
@@ -109,7 +113,9 @@
 
                     <div class = "comment-body">
                         <div class = "comment-header">
-                            <span class = "comment-name">jaemin</span>
+                            <span class = "comment-name">
+                                {{post.author_name}}
+                            </span>
                             <span class = "comment-date">2026.04.28</span>
                         </div>
 
@@ -153,17 +159,17 @@
 
                 <div class = "meta-row">
                     <span class = "meta-key">edited</span>
-                    <span class = "meta-value">2026.04.28</span>
+                    <span class = "meta-value">{{post.edited_at}}</span>
                 </div>
 
                 <div class = "meta-row">
                     <span class = "meta-key">views</span>
-                    <span class = "meta-value">1,284</span>
+                    <span class = "meta-value">{{post.views}}</span>
                 </div>
 
                 <div class = "meta-row">
                     <span class = "meta-key">license</span>
-                    <span class = "meta-value">CC BY 4.0</span>
+                    <span class = "meta-value">{{post.license}}</span>
                 </div>  
             </div>
 

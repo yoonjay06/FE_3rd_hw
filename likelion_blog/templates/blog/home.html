@@ -53,7 +53,7 @@
     <div class = "todaynote-inner">
         <div class = "todaynote-header">
             <div class = "todaynote-Frame">
-                <span class = "section-number">{{areas.order}}</span>
+                <span class = "section-number">01</span>
                 <h3 class = "todaynote-title">오늘의 노트</h3>
             </div>
 
@@ -75,7 +75,7 @@
                         <div class = "frame">
                             <div class = "chip1">
                                 <span class = "label-fe">
-                                    Frontend
+                                    {{featured.category.label}}
                                 </span>
                             </div>
                             <div class = "chip2">
@@ -91,7 +91,7 @@
                         </h2>
 
                         <p class = "featuredpostsmall">
-                            {{ featured.subtitle }}
+                            토큰을 짓는 일은 결국 이름을 짓는 일이다. 작은 결정에 이름을 붙이는 일 — 그게 시스템이다.
                         </p>
 
                         <div class = "continue">
@@ -106,56 +106,24 @@
                 <div class = "spacer"></div>
 
                 <div class = "latestpostlist">
-                    <div class = "postmini">
+                    {% for post in others %}
+                        <a href = "{% url 'tech_detail' post.slug %}" class = "postmini-link">
+                            <div class = "postmini">
+                                <div class = "postminiframe">
+                                    <span class = "chip">
+                                        {{ post.category.label }}
+                                    </span>
+                                    <span class = "postdate">
+                                        {{ post.published_at|date:"m.d" }}
+                                    </span>
+                                </div>
 
-                        <div class = "postminiframe">
-                            <span class = "chip">TypeScript</span>
-                            <span class = "postdate">04.21</span>
-                        </div>
-
-                        <span class = "comment">tRPC와 함께한 1년: 좋았던 것, 불편했던 것</span>
-                    </div>
-
-                    <div class = "postmini">
-
-                        <div class = "postminiframe">
-                            <span class = "chip">Frontend</span>
-                            <span class = "postdate">04.14</span>
-                        </div>
-
-                        <span class = "comment">CSS Container Queries, 결국 쓰게 되더라</span>
-                    </div>
-
-                    <div class = "postmini">
-
-                        <div class = "postminiframe">
-                            <span class = "chip">AI</span>
-                            <span class = "postdate">04.07</span>
-                        </div>
-
-                        <span class = "comment">Vibe coding 다음 단계 — 워크플로우 만들기</span>
-                    </div>
-
-                    <div class = "postmini">
-
-                        <div class = "postminiframe">
-                            <span class = "chip">Performance</span>
-                            <span class = "postdate">03.30</span>
-                        </div>
-
-                        <span class = "comment">React 19 컴파일러로 useMemo를 지웠다</span>
-                    </div>
-
-                    <div class = "postmini">
-
-                        <div class = "postminiframe">
-                            <span class = "chip">Series · DS</span>
-                            <span class = "postdate">03.22</span>
-                        </div>
-
-                        <span class = "comment">디자인 토큰을 코드로 옮기는 5가지 방법</span>
-                    </div>
-
+                                <span class = "comment">
+                                    {{ post.title}}
+                                </span>
+                            </div>
+                        </a>
+                    {% endfor %}
                 </div>
             </aside>
         </div>

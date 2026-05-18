@@ -14,10 +14,12 @@
 
         <div class = "header-row">
             <div class = "title-stack">
-                <span class = "eyebrow">TECH NOTES</span>
+                <span class = "eyebrow">
+                    {{ page_eyebrow }}
+                </span>
 
                 <h1 class = "page-title">
-                    만들면서 배운 것들.
+                    {{ page_h1 }}
                 </h1>
             </div>
             
@@ -35,253 +37,57 @@
                 <span class = "chip-label1">All</span>
             </div>
 
-            <div class = "chip">
-                <span class = "chip-label">Frontend</span>
-            </div>
-
-            <div class = "chip">
-                <span class = "chip-label">TypeScript</span>
-            </div>
-
-            <div class = "chip">
-                <span class = "chip-label">AI</span>
-            </div>
-
-            <div class = "chip">
-                <span class = "chip-label">Performance</span>
-            </div>
-
-            <div class = "chip">
-                <span class = "chip-label">Series · DS</span>
-            </div>
+            {% for category in categories %}
+                <div class = "chip">
+                    <span class = "chip-label">
+                        {{category.label}}
+                    </span>
+                </div>
+            {% endfor %}
         </div>
 
         <div class = "post-list">
-            <div class = "post-row">
+            {%for post in posts %}
+                <div class = "post-row">
 
-                <time class = "post-date" datetime = "2026-04-28">
-                    2026.04.28
-                </time>
+                    <time class = "post-date" datetime = "{{ post.published_at|date:'Y-m-d' }}">
+                        {{ post.published_at|date:"Y.m.d" }}
+                    </time>
 
-                <div class = "content-col">
+                    <div class = "content-col">
 
-                    <h2 class = "post-title">
-                        손에 익는 디자인 시스템 만들기
-                    </h2>
+                        <h2 class = "post-title">
+                            {{ post.title }}
+                        </h2>
 
-                    <p class = "post-description">
-                        Designing a system that fits the hand
-                    </p>
+                        <p class = "post-description">
+                            {{ post.subtitle }}
+                        </p>
 
-                    <div class = "tag-row">
-                        <div class = "chip1">
-                            <span class = "chip-label1">Frontend</span>
+                        <div class = "tag-row">
+                            <div class = "chip1">
+                                <span class = "chip-label1">
+                                    {{ post.category.label }}
+                                </span>
+                            </div>
+
+                            {% for tag in posts.tags.all %}
+                                <div class = "chip">
+                                    <span class = "chip-label">
+                                        #{{ tag.label }}
+                                    </span>
+                                </div>
+                            {% endfor %}
                         </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#design-system</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#tokens</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#css</span>
-                        </div>
-
-                    </div>
+                    {% endfor %}    
                 </div>
 
-                <span class = "read-time">8 min</span>
+                <span class = "read-time">
+                    {{ post.reading_minutes}} min
+                </span>
             </div>
 
-            <div class = "post-row">
-
-                <time class = "post-date" datetime = "2026-04-21">
-                    2026.04.21
-                </time>
-
-                <div class = "content-col">
-
-                    <h2 class = "post-title">
-                        tRPC와 함께한 1년: 좋았던 것, 불편했던 것
-                    </h2>
-
-                    <p class = "post-description">
-                        A year with tRPC
-                    </p>
-
-                    <div class = "tag-row">
-                        <div class = "chip1">
-                            <span class = "chip-label1">TypeScript</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#trpc</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#types</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#dx</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <span class = "read-time">6 min</span>
-            </div>
-
-            <div class = "post-row">
-
-                <time class = "post-date" datetime = "2026-04-14">
-                    2026.04.14
-                </time>
-
-                <div class = "content-col">
-
-                    <h2 class = "post-title">
-                        CSS Container Queries, 결국 쓰게 되더라
-                    </h2>
-
-                    <p class = "post-description">
-                        I came around to container queries
-                    </p>
-
-                    <div class = "tag-row">
-                        <div class = "chip1">
-                            <span class = "chip-label1">Frontend</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#css</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#layout</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <span class = "read-time">5 min</span>
-            </div>
-
-            <div class = "post-row">
-
-                <time class = "post-date" datetime = "2026-04-07">
-                    2026.04.07
-                </time>
-
-                <div class = "content-col">
-
-                    <h2 class = "post-title">
-                        Vibe coding 다음 단계 — 워크플로우 만들기
-                    </h2>
-
-                    <p class = "post-description">
-                        Beyond vibe coding
-                    </p>
-
-                    <div class = "tag-row">
-                        <div class = "chip1">
-                            <span class = "chip-label1">AI</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#ai</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#workflow</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#agents</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <span class = "read-time">12 min</span>
-            </div>
-
-            <div class = "post-row">
-
-                <time class = "post-date" datetime = "2026-03-30">
-                    2026.03.30
-                </time>
-
-                <div class = "content-col">
-
-                    <h2 class = "post-title">
-                        React 19 컴파일러로 useMemo를 지웠다
-                    </h2>
-
-                    <p class = "post-description">
-                        Removing useMemo with React 19
-                    </p>
-
-                    <div class = "tag-row">
-                        <div class = "chip1">
-                            <span class = "chip-label1">Performance</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#react</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#perf</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <span class = "read-time">7 min</span>
-            </div>
-
-            <div class = "post-row">
-
-                <time class = "post-date" datetime = "2026-03-22">
-                    2026.03.22
-                </time>
-
-                <div class = "content-col">
-
-                    <h2 class = "post-title">
-                        디자인 토큰을 코드로 옮기는 5가지 방법
-                    </h2>
-
-                    <p class = "post-description">
-                        Five ways to ship design tokens
-                    </p>
-
-                    <div class = "tag-row">
-                        <div class = "chip1">
-                            <span class = "chip-label1">Series · DS</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#design-system</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#series</span>
-                        </div>
-
-                        <div class = "chip">
-                            <span class = "chip-label">#5/8</span>
-                        </div>
-
-                    </div>
-                </div>
-
-                <span class = "read-time">9 min</span>
-            </div>
+            
         </div>
 
         <div class = "bottom-rectangle"></div>

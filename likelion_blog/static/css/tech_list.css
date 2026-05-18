@@ -284,3 +284,16 @@
 .p{
     margin: 0;
 }
+
+.post-date{
+    width: 120px;
+}
+
+.content-col{
+    flex: 1;
+}
+
+.read-time{
+    width: 60px;
+    text-align: right;
+}
