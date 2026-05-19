@@ -579,3 +579,14 @@ a {
 .latestpostlist > .postmini-link:last-child .postmini { 
     border-bottom: none;
 }
+
+.btn-ghost{
+    color: var(--beige-ink-1, #3A2419);
+
+/* Body/Small Bold */
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 160%; /* 22.4px */
+}

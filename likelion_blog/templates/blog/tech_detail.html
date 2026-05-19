@@ -42,7 +42,7 @@
                 </div>
 
                 <span class = "post-meta-text">
-                    {{post.published_at}} · {{post.read_minutes}} min · {{post.series_label}}
+                    {{post.published_at|date:"Y.m.d"}} · {{post.read_minutes}} min · {{post.series_label}}
                 </span>
             </div>
 
@@ -85,67 +85,69 @@
             <div class = "note-divider">
                 <div class = "line"></div>
             </div>
-            <section class = "comment-section">
+            <section class="comment-section">
 
-                <h3 class = "comments-title">
-                comments · 4
+                <h3 class="comments-title">
+                    comments · {{ post.comments.count }}
                 </h3>
 
-                <div class = "comment-editor">
-                    <div class = "avatar">
-                        <span class = "social-id">BL</span>
+                <div class="comment-editor">
+                    <div class="avatar">
+                        <span class="social-id">BL</span>
                     </div>
 
-                    <div class = "comment-editor-text">
-                        <span class = "comment-author">아기사자</span>
-                        <span class = "comment-placeholder">댓글을 남겨주세요...</span>
+                    <div class="comment-editor-text">
+                        <span class="comment-author">
+                            아기사자
+                        </span>
+
+                        <span class="comment-placeholder">
+                            댓글을 남겨주세요...
+                        </span>
                     </div>
 
-                    <button class = "comment-button">
-                        <div class = "post-btn">post →</div>
+                    <button class="comment-button">
+                        <span class="post-btn">
+                            post →
+                        </span>
                     </button>
                 </div>
 
-                <div class = "comment-item">
-                    <div class = "avatar">
-                        <span class = "social-id">JM</span>
-                    </div>
-
-                    <div class = "comment-body">
-                        <div class = "comment-header">
-                            <span class = "comment-name">
-                                {{post.author_name}}
+                {% for comment in post.comments.all %}
+                    <div class="comment-item">
+                        <div class="avatar">
+                            <span class="social-id">
+                                {{ comment.initials }}
                             </span>
-                            <span class = "comment-date">2026.04.28</span>
                         </div>
 
-                        <p class = "comment-text">
-                            토큰 네이밍 진짜 어렵죠. semantic 레벨까지 가면 의견 갈리고요.
-                        </p>
+                        <div class="comment-body">
+                            <div class="comment-header">
+                                <span class="comment-name">
+                                    {{ comment.display_name }}
+                                </span>
+
+                                <span class="comment-date">
+                                    {{comment.date_display}}
+                                </span>
+                            </div>
+
+                            <p class="comment-text">
+                                {{ comment.body }}
+                            </p>
+                        </div>
                     </div>
-                </div>
+
+                    {% if not forloop.last %}
+                        <div class = "note-divider-between-comments">
+                            <div class="line-comment"></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
             
-                <div class = "note-divider-between-comments">
-                    <div class = "line-comment"></div>
-                </div>
 
-                <div class = "comment-item">
-                    <div class = "avatar">
-                        <span class = "social-id">SY</span>
-                    </div>
-
-                    <div class = "comment-body">
-                        <div class = "comment-header">
-                            <span class = "comment-name">soyun</span>
-                            <span class = "comment-date">2026.04.29</span>
-                        </div>
-
-                        <p class = "comment-text">
-                            다음 편 기다릴게요. 빌드 파이프라인 부분 궁금해요.
-                        </p>
-                    </div>
-                </div>
-            </section>
+            </section> 
         </article>
 
         <aside class = "meta-sidebar">
@@ -159,7 +161,7 @@
 
                 <div class = "meta-row">
                     <span class = "meta-key">edited</span>
-                    <span class = "meta-value">{{post.edited_at}}</span>
+                    <span class = "meta-value">{{post.edited_at|date:"Y.m.d"}}</span>
                 </div>
 
                 <div class = "meta-row">
