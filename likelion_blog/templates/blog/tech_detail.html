@@ -90,34 +90,57 @@
                 <h3 class="comments-title">
                     comments · {{ post.comments.count }}
                 </h3>
+                {% if request.user.is_authenticated %}
+                    <div class="comment-editor">
+                        <div class="avatar">
+                            <span class="social-id">
+                                {{ request.user.first_name|default:request.user.username|slice:":2"|upper }}
+                            </span>
+                        </div>
 
-                <div class="comment-editor">
-                    <div class="avatar">
-                        <span class="social-id">BL</span>
+                        <div class="comment-editor-text">
+                            <span class="comment-author">
+                                {{ request.user.first_name|default:request.user.username }}
+                            </span>
+
+                            <span class="comment-placeholder">
+                                댓글을 남겨주세요...
+                            </span>
+                        </div>
+
+                        <button class="comment-button">
+                            <span class="post-btn">
+                                post →
+                            </span>
+                        </button>
                     </div>
 
-                    <div class="comment-editor-text">
-                        <span class="comment-author">
-                            아기사자
-                        </span>
+                {% else %}
+                    <div class = "comment-editor">
+                        <div class = "comment-editor-text">
+                            <span class = "comment-author">
+                                댓글을 남기려면 로그인이 필요해요
+                            </span>
 
-                        <span class="comment-placeholder">
-                            댓글을 남겨주세요...
-                        </span>
+                            <span class = "comment-placeholder">
+                                Sign in to leave a note on this page.
+                            </span>
+                        </div>
+                    
+
+                        <button type ="button" class = " comment-button">
+                            <span class = "post-btn">
+                                Sign in →
+                            </span>
+                        </button>
                     </div>
-
-                    <button class="comment-button">
-                        <span class="post-btn">
-                            post →
-                        </span>
-                    </button>
-                </div>
+                {% endif %}
 
                 {% for comment in post.comments.all %}
                     <div class="comment-item">
                         <div class="avatar">
                             <span class="social-id">
-                                {{ comment.initials }}
+                                JM
                             </span>
                         </div>
 

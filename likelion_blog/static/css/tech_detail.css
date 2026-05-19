@@ -284,13 +284,13 @@
 .comment-editor-text{
     display: flex;
     flex-direction: column;
-        align-items: flex-start;
+    align-items: flex-start;
     gap: 2px;
-    flex: 1 0 0;
+    flex: 1;
 }
 
 .comment-author{
-    width: 52px;
+    width: auto;
     color: var(--beige-ink-1, #3A2419);
 
 /* Body/Small Bold */
@@ -302,7 +302,7 @@
 }
 
 .comment-placeholder{
-    width: 111px;
+    width: auto;
     color: var(--beige-ink-3, #8A6A55);
 
 /* Body/Small Meta */
@@ -320,6 +320,8 @@
     gap: 8px;
     border-radius: 8px;
     background: var(--beige-accent-default, #E8794A);
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 .post-btn{
