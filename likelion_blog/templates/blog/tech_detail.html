@@ -15,21 +15,15 @@
             <span class = "toc-title">ON THIS PAGE</span>
 
             <div class = "toc-items">
-                <div class = "toc-item1">
-                    <span class = "whatistoken">1. 토큰이란</span>
-                </div>
-
-                <div class = "toc-item">
-                    <span class = "other-toc-items">2. 단위 결정</span>
-                </div>
-
-                <div class = "toc-item">
-                    <span class = "other-toc-items">3. 빌드 파이프라인</span>
-                </div>
-
-                <div class = "toc-item">
-                    <span class = "other-toc-items">4. 마무리</span>
-                </div>
+                {% for section in sections %}
+                    {% if section.kind == 'h2' %}
+                        <div class = "{% if forloop.first %}toc-item1{% else %}toc-item{% endif %}">
+                            <a href = "#{{ section.anchor }}" class = "{% if forloop.first %}whatistoken{% else %}other-toc-items{% endif %}">
+                                {{ section.anchor|cut:"sec-" }}.{{ section.text }}
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
             </div>
         </aside>
 
