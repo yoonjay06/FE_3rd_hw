@@ -62,9 +62,11 @@
             </div>
 
             <div class="forgot-row">
-                <button type="button" class="forgot-button">
-                    forgot password?
-                </button>
+                <div class="forgot-row">
+                    <a href="#" class="forgot-button">
+                        forgot password?
+                    </a>
+                </div>
             </div>
 
             <div class="remember-row">
@@ -81,12 +83,6 @@
                     </span>
                 </label>
             </div>
-
-            {% if error %}
-                <p class="login-error">
-                    {{ error }}
-                </p>
-            {% endif %}
 
             <button type="submit" class="login-submit-button">
                 Sign in →

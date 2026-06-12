@@ -1,7 +1,122 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}회원가입 · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W3 — 아기 사자 작성 영역 #}
+
+<link rel="stylesheet" href="{% static 'css/signup.css' %}">
+
+<main class="signup-page">
+    <section class="signup-card">
+
+        <header class="signup-header">
+            <p class="signup-eyebrow">
+                SIGN UP · 회원가입
+            </p>
+
+            <h1 class="signup-title">
+                처음 오셨네요.
+            </h1>
+
+            <p class="signup-subtitle">
+                Make a paper to leave notes, save posts, and join the conversation.
+            </p>
+        </header>
+
+        <div class="note-divider">
+            <div class="line"></div>
+        </div>
+
+        <form class="signup-form" method="post">
+            {% csrf_token %}
+
+            <div class="text-field">
+                <label for="name" class="field-label">
+                    NAME · 이름
+                </label>
+
+                <input
+                    id="name"
+                    name="name"
+                    class="field-input"
+                    type="text"
+                    placeholder="Like Lion"
+                    value="{{ name }}"
+                >
+            </div>
+
+            <div class="text-field">
+                <label for="username" class="field-label">
+                    ID
+                </label>
+
+                <input
+                    id="username"
+                    name="username"
+                    class="field-input"
+                    type="text"
+                    placeholder="babyLion"
+                    value="{{ username }}"
+                >
+            </div>
+
+            <div class="text-field">
+                <label for="password" class="field-label">
+                    PASSWORD
+                </label>
+
+                <input
+                    id="password"
+                    name="password"
+                    class="field-input"
+                    type="password"
+                    placeholder="8자 이상, 영문/숫자 포함"
+                >
+            </div>
+
+            <div class="terms-row">
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="agree"
+                        class="terms-checkbox"
+                        checked
+                    >
+
+                    <span class="checkbox-custom"></span>
+
+                    <span class="terms-text">
+                        이용약관과 개인정보 처리방침에 동의합니다.<br>
+                        I agree to the Terms and Privacy Policy.
+                    </span>
+                </label>
+            </div>
+
+            {% if errors %}
+                <div class="signup-errors">
+                    {% for error in errors %}
+                        <p class="signup-error">
+                            {{ error }}
+                        </p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <button type="submit" class="signup-button">
+                Create account →
+            </button>
+        </form>
+
+        <p class="signin-guide">
+            이미 계정이 있으신가요?
+            <a href="{% url 'login' %}" class="signin-link">
+                Sign in
+            </a>
+        </p>
+
+    </section>
+</main>
+
 {% endblock %}
