@@ -1,7 +1,105 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block title %}로그인 · {{ BRAND_NAME }}{% endblock %}
 
 {% block content %}
 {# TODO: W3 — 아기 사자 작성 영역 #}
+
+<link rel="stylesheet" href="{% static 'css/login.css' %}">
+
+<main class="login-page">
+    <section class="login-card">
+
+        <header class="login-header">
+            <p class="login-eyebrow">
+                LOGIN · 로그인
+            </p>
+
+            <h1 class="login-title">
+                다시 오셨네요.
+            </h1>
+
+            <p class="login-subtitle">
+                Welcome back. Sign in to leave notes and comment
+            </p>
+        </header>
+
+        <div class="note-divider">
+            <div class="line"></div>
+        </div>
+
+        <form class="login-form" method="post">
+            {% csrf_token %}
+
+            <div class="text-field">
+                <label for="username" class="field-label">
+                    ID
+                </label>
+
+                <input
+                    id="username"
+                    name="username"
+                    class="field-input"
+                    type="text"
+                    placeholder="babyLion"
+                    value="{{ username }}"
+                >
+            </div>
+
+            <div class="text-field">
+                <label for="password" class="field-label">
+                    PASSWORD
+                </label>
+
+                <input
+                    id="password"
+                    name="password"
+                    class="field-input"
+                    type="password"
+                    placeholder="••••••••"
+                >
+            </div>
+
+            <div class="forgot-row">
+                <button type="button" class="forgot-button">
+                    forgot password?
+                </button>
+            </div>
+
+            <div class="remember-row">
+                <label class="checkbox-label">
+                    <input
+                        type="checkbox"
+                        name="remember"
+                        class="remember-checkbox"
+                        checked
+                    >
+                    <span class="checkbox-custom"></span>
+                    <span class="remember-text">
+                        Remember me on this paper
+                    </span>
+                </label>
+            </div>
+
+            {% if error %}
+                <p class="login-error">
+                    {{ error }}
+                </p>
+            {% endif %}
+
+            <button type="submit" class="login-submit-button">
+                Sign in →
+            </button>
+        </form>
+
+        <p class="signup-guide">
+            처음이신가요?
+            <a href="{% url 'signup' %}" class="signup-link">
+                Create an account
+            </a>
+        </p>
+
+    </section>
+</main>
 {% endblock %}
