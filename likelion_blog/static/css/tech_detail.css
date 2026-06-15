@@ -615,3 +615,19 @@ a{
     text-decoration-line: none;
 }
 
+.comment-input{
+    border: none;
+    background: transparent;
+    outline: none;
+
+    color: var(--beige-ink-3, #8A6A55);
+
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.comment-input::placeholder{
+    color: var(--beige-ink-3, #8A6A55);
+}

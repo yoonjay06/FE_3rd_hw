@@ -85,7 +85,9 @@
                     comments · {{ post.comments.count }}
                 </h3>
                 {% if request.user.is_authenticated %}
-                    <div class="comment-editor">
+                    <form class="comment-editor" method="post">
+                        {% csrf_token %}
+
                         <div class="avatar">
                             <span class="social-id">
                                 {{ request.user.first_name|default:request.user.username|slice:":2"|upper }}
@@ -97,17 +99,21 @@
                                 {{ request.user.first_name|default:request.user.username }}
                             </span>
 
-                            <span class="comment-placeholder">
-                                댓글을 남겨주세요...
-                            </span>
+                            <input
+                                type="text"
+                                name="body"
+                                class="comment-input"
+                                placeholder="댓글을 남겨주세요..."
+                                required
+                            >
                         </div>
 
-                        <button class="comment-button">
+                        <button type="submit" class="comment-button">
                             <span class="post-btn">
                                 post →
                             </span>
                         </button>
-                    </div>
+                    </form>
 
                 {% else %}
                     <div class = "comment-editor">

@@ -100,22 +100,34 @@ def tech_list(request):
     })
 
 
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import TechPost, Comment
+
 def tech_detail(request, slug):
-    """기술 글 상세 페이지 (TechC)"""
     post = get_object_or_404(
-        TechPost.objects.select_related('category').prefetch_related('tags'),
-        slug=slug,
+        TechPost.objects.select_related("category").prefetch_related("tags", "comments"),
+        slug=slug
     )
-    from django.urls import reverse
+
+    if request.method == "POST":
+        body = request.POST.get("body")
+
+        if body:
+            Comment.objects.create(
+                post=post,
+                author_name=request.user.username,
+                body=body,
+            )
+
+        return redirect(post.get_absolute_url())
+
     sections = _parse_body(post.body)
-    comments = list(post.comments.all().order_by('created_at'))
-    return render(request, 'blog/tech_detail.html', {
-        'active_nav': 'tech',
-        'page_number': '03 / 05',
-        'post': post,
-        'sections': sections,
-        'comments': comments,
-        'comment_url': reverse('comment_submit', args=[slug]),
+
+    return render(request, "blog/tech_detail.html", {
+        "active_nav": "tech",
+        "page_number": "03 / 05",
+        "post": post,
+        "sections": sections,
     })
 
 

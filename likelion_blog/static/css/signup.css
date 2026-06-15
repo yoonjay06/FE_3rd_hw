@@ -196,7 +196,7 @@
 }
 
 .terms-text{
-    color: var(--beige-ink-2, #5B3A28);
+    color: var(--beige-ink-2, #8A6A55);
 
     font-family: Inter;
     font-size: 13px;
@@ -204,6 +204,16 @@
     font-weight: 400;
     line-height: 160%;
 }
+
+.terms-link{
+    color: #8C3A19;
+    text-decoration: none;
+}
+
+.a{
+    text-decoration: none;
+}
+
 
 .signup-button{
     display: flex;

@@ -8,7 +8,7 @@
   <nav class="nav-group">
     {% for item in NAV_ITEMS %}
       <a href="{% url item.url_name %}"
-         class="nav-item {% if active_nav == item.key %}nav-item--active{% endif %}">
+        class="nav-item {% if active_nav == item.key %}nav-item--active{% endif %}">
         {{ item.label }}
       </a>
     {% endfor %}
